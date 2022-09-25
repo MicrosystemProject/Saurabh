@@ -62,4 +62,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 		employeeRepositroy.delete(emp);
 	}
 
+	@Override
+	public Optional<Employee> findByEmail(String femail) {
+		
+		return employeeRepositroy.findByEmail(femail);
+	}
+
 }

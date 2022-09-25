@@ -70,6 +70,19 @@ public class EmployeeController {
 		return employee.get();
 	}
 	
+	@GetMapping("/getEmployeeByEmail")
+	public Employee getEmployeeByEmail(@RequestParam("email") String femail) {
+		
+         Optional<Employee> employee=employeeService.findByEmail(femail);
+		
+		if(employee.isPresent())
+			System.out.println(employee.get());
+		else
+			System.out.println("Employee Not found " + femail);
+		
+		return employee.get();
+	}
+	
 	//Update Employee Detail
 	//Update Employee Details
 		@PutMapping("/editEmployee/{id}")

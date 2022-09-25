@@ -20,6 +20,8 @@ public interface EmployeeService {
 
 	public void deleteEmp(Employee emp);
 
+	public Optional<Employee> findByEmail(String femail);
+
 	
 	
 	
