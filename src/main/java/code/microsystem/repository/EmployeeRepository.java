@@ -18,5 +18,8 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	
 	@Query("from Employee e where e.email=:femail")
 	Optional<Employee> findByEmail(String femail);
+	
+	@Query("from Employee e where e.email=:femail and e.fname=:name")
+	Optional<Employee> findByEmailAndName(String femail,String name);
 
 }
